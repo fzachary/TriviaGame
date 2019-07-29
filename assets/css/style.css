@@ -1,0 +1,47 @@
+body {
+    background-image: url("../images/milky-way-background.jpg");
+}
+
+.container {
+    background-color: azure;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+}
+
+#header {
+    font-size: 45px;
+    color: darkslateblue;
+    margin-bottom: 0;
+}
+
+button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    padding: 48px 96px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555555;
+    color: white;
+}
+    /* background-color: rgb(139, 212, 142);
+    border: none;
+    color: white;
+    padding: 30px 64px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px; */
+
+
