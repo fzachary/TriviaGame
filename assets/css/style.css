@@ -6,6 +6,7 @@ body {
     background-color: azure;
     margin-left: 100px;
     margin-right: 100px;
+    padding-bottom: 100px;
     text-align: center;
     font-family: 'Questrial', sans-serif;
 }
@@ -13,7 +14,12 @@ body {
 #header {
     font-size: 45px;
     color: darkslateblue;
-    margin-bottom: 0;
+    padding-bottom: 25px;
+    padding-top: 50px;
+}
+
+h2 {
+    font-size: 27px;
 }
 
 button {
@@ -31,17 +37,20 @@ button {
     cursor: pointer;
 }
 
+span {
+    line-height: 45px;
+}
+
+li {
+    list-style-type: none;
+}
+
 button:hover {
     background-color: #555555;
     color: white;
 }
-    /* background-color: rgb(139, 212, 142);
-    border: none;
-    color: white;
-    padding: 30px 64px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px; */
 
+#submit-button {
+    margin-top: 50px;
+}
 
