@@ -1,28 +1,27 @@
-// Correct and incorrect answers to the questions
-var correct = 0;
-var incorrect = 0;
+// Correct and incorrect answers to the questions (Didn't need these, since I used the array.length
+// var correct = 0;
+// var incorrect = 0;
 
-// Object of correct answers to the questions
-var answers = {
-  "group1": "d",
-  "group2": "b",
-  "group3": "a",
-  "group4": "b",
-  "group5": "b",
-  "group6": "c",
-  "group7": "d",
-  "group8": "a",
-  "group9": "b",
-  "group10": "d"
-};
+// Object of correct answers to the questions (Didn't need this due to the syntax of submit button on click function)
+// var answers = {
+//   "group1": "d",
+//   "group2": "c",
+//   "group3": "a",
+//   "group4": "b",
+//   "group5": "b",
+//   "group6": "c",
+//   "group7": "d",
+//   "group8": "a",
+//   "group9": "b",
+//   "group10": "d"
+// };
 
 // Empty arrays for the correct and incorrect answers
 var correctAnswers = [];
 var incorrectAnswers = [];
-
 var intervalId;
+var time = 90;
 
-var time = 120;
 
 function run() {
         clearInterval(intervalId);
@@ -30,7 +29,7 @@ function run() {
 }
 
 
-function showStats() {
+function showResults() {
     $("#correct").text("Correct Answers: " + correctAnswers.length);
     $("#incorrect").text("Incorrect Answers: " + incorrectAnswers.length);
     $("#refresh").text("Refresh the page to play again!");
@@ -38,24 +37,104 @@ function showStats() {
 
 
 function decrement() {
-        time--;
-        $("#timer").html("Time remaining: " + time);
-        if (time === 0) {
+       $("#timer").html("Time remaining: " + time + " seconds"); time--;
+        if (time < 0) {
             stop();
-            $("#timer").html("Time's up!");
-            showStats();
+            $("#timer").html("Sorry, you've run out of time! Try again.");
+
+            var answerValue1 = $("input[name='group1']:checked").val();
+            if (answerValue1 === "d") {
+                correctAnswers.push(answerValue1);
+            } else {
+                incorrectAnswers.push(answerValue1);
+            }
+
+            var answerValue2 = $("input[name='group2']:checked").val();
+            if (answerValue2 === "c") {
+                correctAnswers.push(answerValue2);
+            } else {
+                incorrectAnswers.push(answerValue2);
+            }
+
+            var answerValue3 = $("input[name='group3']:checked").val();
+            if (answerValue3 === "a") {
+                correctAnswers.push(answerValue3);
+            } else {
+                incorrectAnswers.push(answerValue3);
+            }
+
+            var answerValue4 = $("input[name='group4']:checked").val();
+            if (answerValue4 === "b") {
+                correctAnswers.push(answerValue4);
+            } else {
+                incorrectAnswers.push(answerValue4);
+            }
+
+            var answerValue5 = $("input[name='group5']:checked").val();
+            if (answerValue5 === "b") {
+                correctAnswers.push(answerValue5);
+            } else {
+                incorrectAnswers.push(answerValue5);
+            }
+
+            var answerValue6 = $("input[name='group6']:checked").val();
+            if (answerValue6 === "c") {
+                correctAnswers.push(answerValue6);
+            } else {
+                incorrectAnswers.push(answerValue6);
+            }
+
+            var answerValue7 = $("input[name='group7']:checked").val();
+            if (answerValue7 === "d") {
+                correctAnswers.push(answerValue7);
+            } else {
+                incorrectAnswers.push(answerValue7);
+            }
+
+            var answerValue8 = $("input[name='group8']:checked").val();
+            if (answerValue8 === "a") {
+                correctAnswers.push(answerValue8);
+            } else {
+                incorrectAnswers.push(answerValue8);
+            }
+
+            var answerValue9 = $("input[name='group9']:checked").val();
+            if (answerValue9 === "b") {
+                correctAnswers.push(answerValue9);
+            } else {
+                incorrectAnswers.push(answerValue9);
+            }
+
+            var answerValue10 = $("input[name='group10']:checked").val();
+            if (answerValue10 === "d") {
+                correctAnswers.push(answerValue10);
+            } else {
+                incorrectAnswers.push(answerValue10);
+            }
+
+            // console.log(correctAnswers);
+            // console.log(incorrectAnswers);
+            
+            hideQuiz();
+
+            hideSubmit();
+
+            showResults();
         }
 }
+
 
 function stop() {
         clearInterval(intervalId);
 }
+
 
 // A function to hide the quiz
 function hideQuiz() {
     var quiz = document.getElementById('quiz');
     quiz.style.display = 'none';
 }
+
 
 // A function to show the quiz
 function showQuiz() {
@@ -69,7 +148,6 @@ function showQuiz() {
     var submitButton = document.getElementById('submit-button');
     submitButton.style.display = "inline";
     submitButton.style.textAlign = "center";
-    console.log('game started');
     
     $('#start-button').hide();
 }
@@ -104,23 +182,88 @@ $('#start-button').on('click', function() {
     run();
 })
 
-// $('#submit-button').on('click', function(e) {
-//     e.preventDefault();
-//     questions = $('.question');
-//     questions.each(function() {
-//         var answer = $(this).find("input: checked");
-//         key = answer.attr("name");
-//         val = answer.attr("value");
+$("#submit-button").on('click', function() {
+    var answerValue1 = $("input[name='group1']:checked").val();
+    if (answerValue1 === "d") {
+        correctAnswers.push(answerValue1);
+    } else {
+        incorrectAnswers.push(answerValue1);
+    }
 
-//         if (answer.length === 0) {
-//             $(this).push(incorrectAnswers);
-//         } else if (answers[key] !== val) {
-//             $(this).push(incorrectAnswers);
-//         } else {
-//             $(this).push(correctAnswers);
-//         }
+    var answerValue2 = $("input[name='group2']:checked").val();
+    if (answerValue2 === "c") {
+        correctAnswers.push(answerValue2);
+    } else {
+        incorrectAnswers.push(answerValue2);
+    }
 
-//         console.log(correctAnswers);
-//         console.log(incorrectAnswers);
+    var answerValue3 = $("input[name='group3']:checked").val();
+    if (answerValue3 === "a") {
+        correctAnswers.push(answerValue3);
+    } else {
+        incorrectAnswers.push(answerValue3);
+    }
 
-//     })})
+    var answerValue4 = $("input[name='group4']:checked").val();
+    if (answerValue4 === "b") {
+        correctAnswers.push(answerValue4);
+    } else {
+        incorrectAnswers.push(answerValue4);
+    }
+
+    var answerValue5 = $("input[name='group5']:checked").val();
+    if (answerValue5 === "b") {
+        correctAnswers.push(answerValue5);
+    } else {
+        incorrectAnswers.push(answerValue5);
+    }
+
+    var answerValue6 = $("input[name='group6']:checked").val();
+    if (answerValue6 === "c") {
+        correctAnswers.push(answerValue6);
+    } else {
+        incorrectAnswers.push(answerValue6);
+    }
+
+    var answerValue7 = $("input[name='group7']:checked").val();
+    if (answerValue7 === "d") {
+        correctAnswers.push(answerValue7);
+    } else {
+        incorrectAnswers.push(answerValue7);
+    }
+
+    var answerValue8 = $("input[name='group8']:checked").val();
+    if (answerValue8 === "a") {
+        correctAnswers.push(answerValue8);
+    } else {
+        incorrectAnswers.push(answerValue8);
+    }
+
+    var answerValue9 = $("input[name='group9']:checked").val();
+    if (answerValue9 === "b") {
+        correctAnswers.push(answerValue9);
+    } else {
+        incorrectAnswers.push(answerValue9);
+    }
+
+    var answerValue10 = $("input[name='group10']:checked").val();
+    if (answerValue10 === "d") {
+        correctAnswers.push(answerValue10);
+    } else {
+        incorrectAnswers.push(answerValue10);
+    }
+
+    // console.log(correctAnswers);
+    // console.log(incorrectAnswers);
+    
+    hideQuiz();
+
+    hideSubmit();
+
+    showResults();
+
+    hideTimer();
+
+    stop();
+
+});
