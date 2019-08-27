@@ -8,8 +8,8 @@ This is a timed trivia game which asks the player a set of questions based on ge
  
  # Technologies used
  
- HTML5
- CSS3
+ HTML5,
+ CSS3,
  JQuery
  
  # Contributions
