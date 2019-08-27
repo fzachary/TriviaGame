@@ -6,6 +6,12 @@ This is a timed trivia game which asks the player a set of questions based on ge
 
  In order to play the game, simply click on the link to the deployed page, and follow the instructions to begin.
  
+ # Technologies used
+ 
+ HTML5
+ CSS3
+ JQuery
+ 
  # Contributions
  
  Please contact me if you would like to contribute.
